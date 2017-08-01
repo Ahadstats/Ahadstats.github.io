@@ -1,0 +1,5 @@
+---
+title: "Socioenvironmental"
+---
+
+A look into a socioenvironmental relationship using stats

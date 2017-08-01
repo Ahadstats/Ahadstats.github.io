@@ -1,0 +1,5 @@
+---
+title: "Ahad attempting social statistics"
+---
+
+Hello!  I'm learning about social statistics and how to use R  

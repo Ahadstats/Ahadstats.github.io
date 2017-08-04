@@ -6,8 +6,6 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Project"
-      href: project.html
     - text: "Socioenvironmental"
       href: socioenvironmental.html
 output:

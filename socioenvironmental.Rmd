@@ -2,4 +2,29 @@
 title: "Socioenvironmental"
 ---
 
-A look into a socioenvironmental relationship using stats
+A look into a socioenvironmental relationship involving environmental protection and gender.  
+
+In this simple analysis, I am examining the proprotion of people who support environmental protection by gender.  The data being applied was acquired via GSS information.
+
+Hypothesis: There is a significant difference between women and men's views on environmental protection.
+Null hypothesis: There is not a significant difference between women and men's views on environmental protection.  
+
+Analysis by Bar Graph and Table
+```{r}
+barplot(as.matrix(envlove), main="Is There Enough Environmental Protection", ylab = "Number of Individuals", xlab = "Viewpoint", cex.lab = 1, cex.main = 1.2, beside=TRUE, col = c("cornflowerblue", "cornsilk1"))
+```
+
+```{r}
+envlove
+```
+
+The bar chart and table provide data that is consistent with the hypothesis that there exists a gendered difference on the views people have towards environmental protection.  Of the respondents who feel more should be done to protect the environment, 64% are female and 34% are male.  The equivalent percentages of 64% female and 34% male appear between respondents who feel enough action is being taken to protect the environment.             
+
+Chisq Test
+```{r}
+envgender <- table(gss$sex, gss$natenvir)
+chisq.test(envgender)
+
+```
+
+The chisq test reveals that there is a significant difference between the views females and males hold towards environmental protection.  With the p-value of 0.0002125, the null hypothesis is rejected.  

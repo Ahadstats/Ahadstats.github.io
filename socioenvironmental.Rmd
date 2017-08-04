@@ -28,3 +28,17 @@ chisq.test(envgender)
 ```
 
 The chisq test reveals that there is a significant difference between the views females and males hold towards environmental protection.  With the p-value of 0.0002125, the null hypothesis is rejected.  
+
+In this examination, there is no evidence that can be used to explain the gendered difference of opinions.  For further analysis, surveys and in-depth interviews should be conducted with the respondents to support this simple statistical analysis.  
+
+Additional R-code used to perform this evaluation
+```{r}
+gss <- read_sav("GSS2016.sav")
+Too_little<-gss$sex[gss$natenvir==1] 
+About_right<-gss$sex[gss$natenvir==2] 
+Dont_know<-gss$sex[gss$natenvir==3] 
+envlove <-structure(list(Too_little=table(Too_little), About_right=table(About_right), Dont_know=table(Dont_know)), Names=c("Too_little", "About_right", "Too_much"), class="data.frame", row.names=c("Male", "Female"))
+
+```
+
+Thank you for making time to see this page!  

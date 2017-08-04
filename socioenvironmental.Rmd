@@ -12,6 +12,7 @@ Null hypothesis: There is not a significant difference between women and men's v
 Analysis by Bar Graph and Table
 ```{r}
 barplot(as.matrix(envlove), main="Is There Enough Environmental Protection", ylab = "Number of Individuals", xlab = "Viewpoint", cex.lab = 1, cex.main = 1.2, beside=TRUE, col = c("cornflowerblue", "cornsilk1"))
+legend("topright", c("Men", "Women"), cex = 1, bty = "n", fill = c("cornflowerblue", "cornsilk1"))
 ```
 
 ```{r}

@@ -183,9 +183,6 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="project.html">Project</a>
-</li>
-<li>
   <a href="socioenvironmental.html">Socioenvironmental</a>
 </li>
       </ul>
@@ -205,7 +202,26 @@ $(document).ready(function () {
 </div>
 
 
-<p>A look into a socioenvironmental relationship using stats</p>
+<p>A look into a socioenvironmental relationship involving environmental protection and gender.</p>
+<p>In this simple analysis, I am examining the proprotion of people who support environmental protection by gender. The data being applied was acquired via GSS information.</p>
+<p>Hypothesis: There is a significant difference between women and men’s views on environmental protection. Null hypothesis: There is not a significant difference between women and men’s views on environmental protection.</p>
+<p>Analysis by Bar Graph and Table</p>
+<pre class="r"><code>barplot(as.matrix(envlove), main=&quot;Is There Enough Environmental Protection&quot;, ylab = &quot;Number of Individuals&quot;, xlab = &quot;Viewpoint&quot;, cex.lab = 1, cex.main = 1.2, beside=TRUE, col = c(&quot;cornflowerblue&quot;, &quot;cornsilk1&quot;))</code></pre>
+<p><img src="socioenvironmental_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>envlove</code></pre>
+<pre><code>##        Too_little About_right Dont_know
+## Male          314         147        63
+## Female        564         262        51</code></pre>
+<p>The bar chart and table provide data that is consistent with the hypothesis that there exists a gendered difference on the views people have towards environmental protection. Of the respondents who feel more should be done to protect the environment, 64% are female and 34% are male. The equivalent percentages of 64% female and 34% male appear between respondents who feel enough action is being taken to protect the environment.</p>
+<p>Chisq Test</p>
+<pre class="r"><code>envgender &lt;- table(gss$sex, gss$natenvir)
+chisq.test(envgender)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  envgender
+## X-squared = 16.913, df = 2, p-value = 0.0002125</code></pre>
+<p>The chisq test reveals that there is a significant difference between the views females and males hold towards environmental protection. With the p-value of 0.0002125, the null hypothesis is rejected.</p>
 
 <p>Copyright &copy; 2017 Ahad, Inc. All rights reserved.</p>
 
